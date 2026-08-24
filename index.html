@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Just Honest Feelings</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:"Segoe UI",sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,120,150,.12),transparent 30%),
+        radial-gradient(circle at 80% 80%,rgba(130,100,255,.10),transparent 30%),
+        #08080d;
+    color:#eee;
+    overflow-x:hidden;
+}
+
+/* Floating lights */
+.light{
+    position:fixed;
+    width:5px;
+    height:5px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.6;
+    animation:float 8s infinite ease-in-out;
+    pointer-events:none;
+}
+
+.light:nth-child(1){left:10%;top:20%;animation-delay:1s;}
+.light:nth-child(2){left:80%;top:15%;animation-delay:3s;}
+.light:nth-child(3){left:20%;top:75%;animation-delay:2s;}
+.light:nth-child(4){left:90%;top:65%;animation-delay:4s;}
+.light:nth-child(5){left:50%;top:10%;animation-delay:5s;}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+        opacity:.3;
+    }
+    50%{
+        transform:translateY(-25px);
+        opacity:1;
+    }
+}
+
+/* Main */
+.container{
+    width:min(900px,92%);
+    margin:auto;
+    padding:70px 0;
+}
+
+/* Intro */
+.intro{
+    text-align:center;
+    margin-bottom:55px;
+    animation:fadeUp 1.5s ease;
+}
+
+.intro span{
+    font-size:14px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#aaa;
+}
+
+.intro h1{
+    margin-top:18px;
+    font-size:clamp(38px,8vw,70px);
+    font-weight:500;
+    letter-spacing:-2px;
+}
+
+.intro h1 span{
+    font-size:inherit;
+    letter-spacing:inherit;
+    text-transform:none;
+    color:#ff9eb5;
+}
+
+.intro p{
+    margin-top:15px;
+    color:#999;
+    font-size:16px;
+}
+
+/* Image */
+.photo{
+    width:min(430px,90%);
+    margin:0 auto 55px;
+    position:relative;
+    animation:fadeUp 1.8s ease;
+}
+
+.photo img{
+    width:100%;
+    display:block;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.6),
+        0 0 40px rgba(255,130,160,.08);
+}
+
+.photo::after{
+    content:"";
+    position:absolute;
+    inset:-8px;
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:30px;
+    pointer-events:none;
+}
+
+/* Story */
+.story{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    backdrop-filter:blur(18px);
+    border-radius:28px;
+    padding:clamp(25px,5vw,50px);
+    box-shadow:0 30px 100px rgba(0,0,0,.35);
+    animation:fadeUp 2s ease;
+}
+
+.story p{
+    font-size:18px;
+    line-height:1.9;
+    color:#d8d8dc;
+    margin-bottom:24px;
+}
+
+.story p:last-child{
+    margin-bottom:0;
+}
+
+.highlight{
+    color:#ffb1c3;
+}
+
+.divider{
+    width:70px;
+    height:1px;
+    background:rgba(255,255,255,.25);
+    margin:40px auto;
+}
+
+/* Final confession */
+.final-message{
+    margin-top:35px;
+    padding:28px 24px;
+    border-left:2px solid #ff9eb5;
+    background:rgba(255,158,181,.035);
+    border-radius:0 18px 18px 0;
+}
+
+.final-message p{
+    margin:0;
+    font-size:19px;
+    line-height:1.9;
+    color:#e4e4e8;
+}
+
+/* Ending */
+.ending{
+    text-align:center;
+    margin-top:55px;
+    animation:fadeUp 2.5s ease;
+}
+
+.ending .symbol{
+    font-size:25px;
+    margin-bottom:18px;
+    opacity:.8;
+}
+
+.ending h2{
+    font-size:28px;
+    font-weight:400;
+}
+
+.ending p{
+    margin-top:12px;
+    color:#888;
+    font-size:15px;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+    .container{
+        padding:45px 0;
+    }
+
+    .story{
+        padding:24px 20px;
+        border-radius:22px;
+    }
+
+    .story p{
+        font-size:16px;
+        line-height:1.85;
+    }
+
+    .final-message{
+        padding:22px 18px;
+    }
+
+    .final-message p{
+        font-size:17px;
+    }
+
+    .intro h1{
+        letter-spacing:-1px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background lights -->
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+
+
+<div class="container">
+
+    <!-- INTRO -->
+    <section class="intro">
+
+        <span>something I never really said</span>
+
+        <h1>
+            I just <span>like you.</span>
+        </h1>
+
+        <p>
+            I don't really know why. I just know that I do.
+        </p>
+
+    </section>
+
+
+    <!-- IMAGE -->
+    <!-- अपनी फोटो का नाम नीचे your-image.jpg की जगह डालना -->
+    <div class="photo">
+
+        <img
+            src="your-image.jpg"
+            alt="A memory"
+        >
+
+    </div>
+
+
+    <!-- STORY -->
+    <section class="story">
+
+        <p>
+            Honestly, I just like you ❤️
+            Mujhe nahi pata kyun ya kaise,
+            but it is what it is.
+            <span class="highlight">
+                I just like you.
+            </span>
+        </p>
+
+
+        <p>
+            Mujhe tere saath baatein karna achcha lagta hai.
+            Teri problems sunna bhi achcha lagta hai,
+            aur shayad isi wajah se mujhe tere saath
+            ek ajeeb sa connection feel hota hai. 🥺
+        </p>
+
+
+        <p>
+            Mujhe kuch nahi pata ki ye sab kya hai.
+            Maine toh tujhe hate karne ki bhi koshish ki thi.
+            Seriously, I tried.
+            Lekin main chahti hi nahi thi ki main tujhe
+            nafrat karun. 💔
+        </p>
+
+
+        <p>
+            Maine puri koshish ki ki jo dil mein hai,
+            usse bahar na aane doon.
+            Socha tha feelings ko bas andar hi daba doon,
+            maybe eventually woh khud hi khatam ho jayengi. 🔥
+        </p>
+
+
+        <p>
+            But honestly...
+            <span class="highlight">
+                I'm completely failing at that.
+            </span>
+        </p>
+
+
+        <div class="divider"></div>
+
+
+        <p>
+            Mujhe nahi pata mujhe kya karna hai.
+            Kaise karna hai.
+            Seriously, what am I even supposed to do? 🤔
+        </p>
+
+
+        <p>
+            Mujhe bas ek cheez pata hai —
+            <span class="highlight">
+                I like you or Love you muje kuchh nhi pata 
+            </span>
+        </p>
+
+
+        <p>
+            Haan, main tujhe kisi aur ke saath dekh sakti hoon.
+            I can act normal.
+            I can even smile and pretend everything is okay.
+            But if I'm being completely honest...
+            kabhi-kabhi mujhe jealousy hoti hai. 😢
+me kisi ko apne sath bandh ke nhi rakhna chahti. 
+dar lagta he muje apni hi feelings se.....😖
+        </p>
+
+
+        <p>
+            Mujhe nahi pata main perfect hoon ya nahi.
+            Shayad nahi hoon.
+            Aur hum dono ke beech differences bhi bahut hain.
+        </p>
+
+
+        <p>
+            Mujhe apni aage ki life ke baare mein bhi
+            kuch khaas nahi pata.
+            What is life and what is not...
+            I literally don't know.
+        </p>
+
+
+        <p>
+            Mera future bhi decided nahi hai.
+            Mujhe ye tak nahi pata ki mujhe exactly
+            kya karna hai.
+            Main bas jahan zindagi le ja rahi hai,
+            wahan chalti ja rahi hoon. ⏳
+        </p>
+
+
+        <p>
+            I'm honestly clueless right now.
+        </p>
+
+
+        <div class="divider"></div>
+
+
+        <p>
+            Aur aisa nahi hai ki maine khud ko rokne ki
+            koshish nahi ki.
+            Maine bahut roka hai khud ko.
+            Bahut baar socha ki bas...
+            enough.
+        </p>
+
+
+        <p>
+            Tune bhi try kiya.
+            Tune jaan-bujhkar aisi-aisi baatein kahi,
+            shayad isliye ki main tujhse door ho jaun,
+            shayad isliye ki main tujhe galat samajh loon. 😞
+        </p>
+
+
+        <p>
+            But somehow...
+            no matter what you did,
+            <span class="highlight">
+                I could never bring myself to hate you.
+            </span>
+        </p>
+
+
+        <p>
+            Shayad mujhe khud nahi pata ki mere andar
+            kya chal raha hai.
+            Shayad mujhe iska naam bhi nahi pata.
+            Shayad mujhe iska answer bhi nahi chahiye.
+        </p>
+
+
+        <p>
+            I just wanted to be honest...
+            at least with myself.
+        </p>
+
+
+        <!-- LAST FEELING -->
+        <div class="final-message">
+
+            <p>
+                <span class="highlight">
+                    I just wanted to get this off my chest
+                    because keeping it inside was hurting too much.
+                </span>
+
+                I don't expect anything from you,
+                I just wanted you to know the truth. 🧸
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- END -->
+    <section class="ending">
+
+        <div class="symbol">
+            ✦
+        </div>
+
+        <h2>
+            Maybe I don't need an answer.
+        </h2>
+
+        <p>
+            Maybe I just needed to say what I feel.
+        </p>
+
+    </section>
+
+</div>
+
+</body>
+</html>
